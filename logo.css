@@ -1,0 +1,63 @@
+.brand-with-logo {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  letter-spacing: 0;
+}
+
+.brand-logo {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
+
+.brand-with-logo .brand-text small {
+  align-self: flex-start;
+}
+
+@media (max-width: 980px) {
+  .brand-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .brand-text {
+    letter-spacing: 4px;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-with-logo {
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 58px;
+    height: 58px;
+  }
+
+  .brand-text {
+    letter-spacing: 3px;
+  }
+
+  .brand-with-logo .brand-text span {
+    font-size: 1.15rem;
+  }
+
+  .brand-with-logo .brand-text small {
+    max-width: 145px;
+    font-size: 0.52rem;
+    line-height: 1.35;
+    letter-spacing: 2px;
+    white-space: normal;
+  }
+}
