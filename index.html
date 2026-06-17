@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="et">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kaine Sang | Professionaalne transporditeenus</title>
+  <meta name="description" content="Kaine Sang pakub lennujaama transfeeri, juhiga auto renti, pulmaauto renti, ürituste transporti ja julgestatud transporti.">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="Kaine Sang avaleht">
+      <span>Kaine Sang</span>
+      <small>Juhiga auto ja transport</small>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">Ava menüü</span>
+    </button>
+
+    <nav id="primary-nav" class="primary-nav" data-nav>
+      <div class="nav-item has-dropdown">
+        <button class="nav-link dropdown-button" type="button" aria-expanded="false" data-dropdown-button>
+          Teenused
+          <span aria-hidden="true">⌄</span>
+        </button>
+        <div class="dropdown-menu" data-dropdown-menu>
+          <a href="#paring">Lennujaama transfeer</a>
+          <a href="#paring">Juhiga auto rent</a>
+          <a href="#paring">Pulmaauto rent</a>
+          <a href="#paring">Ürituste transport</a>
+          <a href="#paring">Julgestatud transport</a>
+        </div>
+      </div>
+      <a class="nav-link" href="uritused.html">Üritused</a>
+      <a class="nav-link" href="kontaktid.html">Kontaktid</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Kaine Sang avaleht">
+      <div class="hero-form-panel" id="paring">
+        <p class="form-note">Päringutele vastame E-P 1h jooksul.</p>
+        <form class="quote-form" action="mailto:info@kainesang.ee" method="post" enctype="text/plain">
+          <div class="field-grid">
+            <label>
+              <span>Teie nimi</span>
+              <input name="nimi" type="text" placeholder="Teie nimi" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Telefon</span>
+              <input name="telefon" type="tel" placeholder="Telefon" autocomplete="tel" required>
+            </label>
+          </div>
+
+          <label>
+            <span>E-posti aadress</span>
+            <input name="email" type="email" placeholder="E-posti aadress" autocomplete="email" required>
+          </label>
+
+          <div class="field-grid">
+            <label>
+              <span>Kuupäev</span>
+              <input name="kuupaev" type="date" required>
+            </label>
+            <label>
+              <span>Kellaaeg</span>
+              <input name="kellaaeg" type="time">
+            </label>
+          </div>
+
+          <label>
+            <span>Eelistatud teenus</span>
+            <select name="teenus" required>
+              <option value="">Vali sobiv teenus</option>
+              <option>Lennujaama transfeer</option>
+              <option>Juhiga auto rent</option>
+              <option>Pulmaauto rent</option>
+              <option>Ürituste transport</option>
+              <option>Julgestatud transport</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Sõidu info</span>
+            <textarea name="info" rows="5" placeholder="Täpsusta alguskoht, sihtkoht, reisijate arv, erisoovid ning millist autot või teenust vajad."></textarea>
+          </label>
+
+          <button class="submit-button" type="submit">
+            Küsi pakkumist
+            <span aria-hidden="true">→</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Privaatne ja täpne transporditeenus</p>
+        <h1>Auto koos professionaalse juhiga igaks sõiduks.</h1>
+        <div class="service-badge">
+          <p>Diskreetne teenindus Eestis ja välismaal.</p>
+          <p>Lennujaamad, pulmad, üritused ja esindussõidud.</p>
+        </div>
+        <p class="support-copy">Kaine Sang aitab siis, kui sõit peab olema mugav, korrektne ja ajas kindel.</p>
+      </div>
+    </section>
+
+    <section class="service-strip" aria-label="Peamised teenused">
+      <article>
+        <strong>Lennujaama transfeer</strong>
+        <span>Vastuvõtt, pagasiabi ja täpne ajastus.</span>
+      </article>
+      <article>
+        <strong>Juhiga auto rent</strong>
+        <span>Esinduslik sõit tööks või privaatseks päevaks.</span>
+      </article>
+      <article>
+        <strong>Ürituste transport</strong>
+        <span>Külaliste, tiimide ja VIP-liikumise korraldus.</span>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Klienditeenindus E-P 9:00-21:00</span>
+    <a href="tel:+3725050700">+372 5050 700</a>
+    <a href="mailto:info@kainesang.ee">info@kainesang.ee</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
