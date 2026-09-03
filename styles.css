@@ -179,7 +179,7 @@ textarea {
   background:
     linear-gradient(90deg, #030403e8 0%, #0304038c 47%, #0304031f 80%),
     linear-gradient(0deg, #070807aa, transparent 40%),
-    url("assets/hero-transport-4k.webp") center/cover no-repeat;
+    url("assets/hero-transport-4k-v2.webp") center/cover no-repeat;
 }
 .hero-copy {
   max-width: 780px;
