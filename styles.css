@@ -518,6 +518,19 @@ h2 {
 .quote-form textarea:focus {
   border-color: var(--gold);
 }
+.quote-form select {
+  color: var(--ivory);
+  background-color: var(--surface);
+  cursor: pointer;
+}
+.quote-form select option {
+  color: #151713;
+  background: #f4f0e7;
+}
+.quote-form select option:checked {
+  color: #111;
+  background: #e2c88e;
+}
 .quote-form .button {
   justify-self: start;
   margin-top: 10px;
