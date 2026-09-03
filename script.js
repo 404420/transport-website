@@ -1,29 +1,55 @@
-const navToggle = document.querySelector('[data-nav-toggle]');
-const nav = document.querySelector('[data-nav]');
-const dropdownButton = document.querySelector('[data-dropdown-button]');
-const dropdownParent = dropdownButton?.closest('.has-dropdown');
-
-navToggle?.addEventListener('click', () => {
-  const isOpen = nav?.classList.toggle('is-open');
-  navToggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+const header = document.querySelector("[data-header]"),
+  toggle = document.querySelector("[data-nav-toggle]"),
+  nav = document.querySelector("[data-nav]"),
+  dropButton = document.querySelector("[data-dropdown-button]"),
+  drop = dropButton?.closest(".has-dropdown");
+const closeNav = () => {
+  nav?.classList.remove("is-open");
+  toggle?.setAttribute("aria-expanded", "false");
+};
+toggle?.addEventListener("click", () => {
+  const open = nav?.classList.toggle("is-open");
+  toggle.setAttribute("aria-expanded", String(!!open));
 });
-
-dropdownButton?.addEventListener('click', (event) => {
-  event.stopPropagation();
-  const isOpen = dropdownParent?.classList.toggle('is-open');
-  dropdownButton.setAttribute('aria-expanded', String(Boolean(isOpen)));
+dropButton?.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const open = drop?.classList.toggle("is-open");
+  dropButton.setAttribute("aria-expanded", String(!!open));
 });
-
-document.addEventListener('click', (event) => {
-  if (!dropdownParent?.contains(event.target)) {
-    dropdownParent?.classList.remove('is-open');
-    dropdownButton?.setAttribute('aria-expanded', 'false');
+document.addEventListener("click", (e) => {
+  if (!drop?.contains(e.target)) {
+    drop?.classList.remove("is-open");
+    dropButton?.setAttribute("aria-expanded", "false");
   }
 });
-
-window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    dropdownParent?.classList.remove('is-open');
-    dropdownButton?.setAttribute('aria-expanded', 'false');
+document
+  .querySelectorAll(".primary-nav a")
+  .forEach((a) => a.addEventListener("click", closeNav));
+addEventListener(
+  "scroll",
+  () => header?.classList.toggle("is-scrolled", scrollY > 20),
+  { passive: true },
+);
+addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeNav();
+    drop?.classList.remove("is-open");
   }
 });
+document
+  .querySelectorAll("[data-year]")
+  .forEach((e) => (e.textContent = new Date().getFullYear()));
+const filterButtons = document.querySelectorAll("[data-fleet-filter]");
+const fleetCards = document.querySelectorAll("[data-fleet-category]");
+filterButtons.forEach((button) =>
+  button.addEventListener("click", () => {
+    const selected = button.dataset.fleetFilter;
+    filterButtons.forEach((item) =>
+      item.classList.toggle("is-active", item === button),
+    );
+    fleetCards.forEach((card) => {
+      card.hidden =
+        selected !== "all" && card.dataset.fleetCategory !== selected;
+    });
+  }),
+);
