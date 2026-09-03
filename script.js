@@ -53,3 +53,16 @@ filterButtons.forEach((button) =>
     });
   }),
 );
+const serviceSelect = document.querySelector('select[name="teenus"]');
+const otherServiceField = document.querySelector("[data-other-service]");
+const otherServiceInput = document.querySelector("[data-other-service-input]");
+const updateOtherService = () => {
+  const show = serviceSelect?.value === "muu";
+  if (otherServiceField) otherServiceField.hidden = !show;
+  if (otherServiceInput) {
+    otherServiceInput.required = show;
+    if (!show) otherServiceInput.value = "";
+  }
+};
+serviceSelect?.addEventListener("change", updateOtherService);
+updateOtherService();

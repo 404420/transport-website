@@ -128,6 +128,8 @@ textarea {
   visibility: hidden;
   transform: translate(-50%, -8px);
   transition: 0.2s;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
 }
 .has-dropdown:hover .dropdown-menu,
 .has-dropdown:focus-within .dropdown-menu,
@@ -534,6 +536,14 @@ h2 {
 .quote-form .button {
   justify-self: start;
   margin-top: 10px;
+}
+.other-service-field[hidden] {
+  display: none;
+}
+.other-service-field {
+  padding: 18px 20px;
+  background: #171a18;
+  border-left: 2px solid var(--gold);
 }
 .page-hero {
   min-height: 68svh;
