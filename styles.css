@@ -303,6 +303,25 @@ h2 {
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   transition: 0.25s;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #0e100f;
+}
+.service-card[style]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, #080a08b8 0%, #080a08ed 76%),
+    var(--service-image) center / cover;
+  opacity: 0.72;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+.service-card[style]:hover::before {
+  transform: scale(1.035);
+  opacity: 0.9;
 }
 .service-card:nth-child(n + 4) {
   grid-column: span 3;
@@ -550,9 +569,11 @@ h2 {
   display: flex;
   align-items: flex-end;
   padding: 160px max(24px, calc((100vw - var(--max)) / 2)) 80px;
-  background:
-    linear-gradient(90deg, #040504e8, #0405044d),
-    url("assets/hero-maybach.webp") center/cover;
+  background-image:
+    linear-gradient(90deg, #040504f2 0%, #040504a8 44%, #04050438 100%),
+    var(--page-hero, url("assets/hero-maybach.webp"));
+  background-position: center;
+  background-size: cover;
 }
 .page-hero > div {
   max-width: 900px;
